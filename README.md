@@ -5,3 +5,5 @@
 - https://github.com/justalever/bookme_demo
 
 - ./bin/dev
+
+- bundle exec rake assets:precompile
