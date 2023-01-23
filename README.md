@@ -7,3 +7,5 @@
 - ./bin/dev
 
 - bundle exec rake assets:precompile
+
+- https://youtu.be/C62F88fUYMY?t=724
