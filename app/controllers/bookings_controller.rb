@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Booking.new
+    @booking_type = BookingType.find_by(name: params[:booking_type])
   end
 
   # GET /bookings/1/edit
@@ -17,9 +18,15 @@ class BookingsController < ApplicationController
   # POST /bookings or /bookings.json
   def create
     @booking = Booking.new(booking_params)
+    @booking_type = BookingType.find(params[:booking][:booking_type_id])
 
     respond_to do |format|
       if @booking.save
+
+        unless @booking_type.payment_required?
+          @booking.approved!
+        end
+
         format.html { redirect_to root_path, notice: "Booking was successfully created." }
         format.json { render :show, status: :created, location: @booking }
       else
@@ -59,4 +66,5 @@ class BookingsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def booking_params
       params.require(:booking).permit(:booking_type_id, :status, :name, :email, :start_at, :end_at, :notes)
+    end
 end

@@ -8,4 +8,4 @@
 
 - bundle exec rake assets:precompile
 
-- https://www.youtube.com/watch?v=H_aVBi2Y0V4
+- https://www.youtube.com/watch?v=4jBPFCtbxk4
