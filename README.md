@@ -8,4 +8,8 @@
 
 - bundle exec rake assets:precompile
 
-- https://www.youtube.com/watch?v=4jBPFCtbxk4
+- https://youtu.be/4jBPFCtbxk4?t=251
+
+- EDITOR="code --wait" rails credentials:edit
+
+- https://github.com/stripe/stripe-cli

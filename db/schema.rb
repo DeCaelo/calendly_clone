@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_162631) do
   create_table "booking_types", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.string "color"
+    t.string "color", default: "#000000"
     t.integer "duration"
     t.boolean "payment_required", default: false
     t.integer "price"
